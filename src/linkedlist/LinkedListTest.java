@@ -71,5 +71,32 @@ class LinkedListTest {
 		
 		
 	}
+	
+	@Test
+	void testSearch() {
+		LinkedList list = new LinkedList();
+		// search in list empty should return false
+		assertEquals(list.search(23), false);
+		
+		
+		list.insert(0, 23);
+		list.insert(1, 55);
+		list.insert(2, 76);
+		list.insert(3, 91);
+		
+		// correct values
+		assertEquals(list.search(23), true);
+		assertEquals(list.search(55), true);
+		assertEquals(list.search(76), true);
+		assertEquals(list.search(91), true);
+		
+		// bad values
+		assertEquals(list.search(999), false);
+		assertEquals(list.search(145), false);
+		assertEquals(list.search(333), false);
+		assertEquals(list.search(695), false);
+		
+		
+	}
 
 }
