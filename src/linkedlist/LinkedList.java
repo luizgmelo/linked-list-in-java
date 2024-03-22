@@ -68,5 +68,20 @@ public class LinkedList {
 		
 	}
 	
+	public boolean search(int data) {
+		if (this.head == null) {
+			return false;
+		}
+		
+		Node current = this.head;
+		while(current != null) {
+			if (current.getData() == data) {
+				return true;
+			}
+			current = current.getNext();
+		}
+		return false;	
+	}
+	
 	
 }
