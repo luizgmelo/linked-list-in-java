@@ -23,5 +23,53 @@ class LinkedListTest {
 		assertEquals(52, list.getHead().getNext().getData());
 		assertEquals(42, list.getHead().getNext().getNext().getData());
 	}
+	
+	@Test
+	void testRemove() {
+		LinkedList list = new LinkedList();
+		list.insert(0, 23);
+		
+		// remove head no elements after
+		list.remove(0);
+		assertEquals(list.getHead(), null);
+		
+		// remove head with elements after
+		list.insert(1, 49);
+		list.insert(2, 13);
+		list.remove(0);
+		
+		assertEquals(list.getHead().getData(), 13);
+				
+		// remove in the middle
+		list.insert(3, 51);
+		list.insert(4, 41);
+		list.insert(5, 27);
+		list.insert(6, 42);
+		list.insert(7, 12);
+		list.insert(8, 22);
+		
+		list.remove(3);
+		assertEquals(list.getHead().getNext().getNext().getNext().getData(), 42);
+		
+		list.remove(3);
+		assertEquals(list.getHead().getNext().getNext().getNext().getData(), 12);
+		
+		
+		// remove in the end
+		// actual list 13 -> 51 -> 41 -> 12 -> 22
+		list.remove(999);
+		assertEquals(list.getHead().getNext().getNext().getNext().getNext(), null);
+		list.remove(3);
+		assertEquals(list.getHead().getNext().getNext().getNext(), null);
+	
+		// remove one Node before end
+		list.remove(1);
+		assertEquals(list.getHead().getNext().getData(), 41);
+		
+		
+		
+		
+		
+	}
 
 }
