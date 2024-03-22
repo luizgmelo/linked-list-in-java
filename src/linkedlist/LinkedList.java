@@ -84,4 +84,13 @@ public class LinkedList {
 	}
 	
 	
+	public void printLinkedList() {
+		Node current = this.head;
+		while(current != null) {
+			System.out.print(" -> " + current.getData());
+			current = current.getNext();
+		}
+		
+	}
+	
 }
