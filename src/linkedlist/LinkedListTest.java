@@ -98,5 +98,16 @@ class LinkedListTest {
 		
 		
 	}
+	
+	@Test
+	void testPrintLinkedList() {
+		LinkedList list = new LinkedList();
+		list.insert(0, 23);
+		list.insert(1, 55);
+		list.insert(2, 76);
+		list.insert(3, 91);		
+		
+		list.printLinkedList();
+	}
 
 }
